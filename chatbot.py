@@ -1,14 +1,9 @@
-import nltk
-from transformers import pipeline
 from gemini.client import Client
+from websocket.client import create_connection
 
-from gemini.client import Client
-
-# Initialize the Gemini client
-api_key = "AIzaSyBGI2clcp9kl1L-MrGAjAiKNg283suCAWc"  
+api_key = "your_api_key"  
 client = Client(api_key)
 
-# Function to interact with the Gemini API
 def get_account_balance():
     balance = client.get_balance()
     return balance
