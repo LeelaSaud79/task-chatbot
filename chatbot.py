@@ -4,13 +4,10 @@ import google.generativeai as genai
 model = genai.GenerativeModel('gemini-pro')
 
 import os
-my_api_key_gemini = ('')
-
-genai.configure(api_key=my_api_key_gemini)
+genai.configure(api_key='AIzaSyABsXXlaIPy-JrIqc671ptSudrjvp5dn2A')
 
 app = Flask(__name__)
 
-# Define your 404 error handler to redirect to the index page
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect(url_for('index'))
@@ -27,9 +24,11 @@ def index():
             if response.text:
                 return response.text
             else:
-                return "Sorry, but I think Gemini didn't want to answer that!"
+                return "Sorry, error is occuring"
         except Exception as e:
-            return "Sorry, but Gemini didn't want to answer that!"
+                print("Error:", e)
+                return "An error occurred while processing your request. Details: {}".format(e)
+
 
     return render_template('index.html', **locals())
 
