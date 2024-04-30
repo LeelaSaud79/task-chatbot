@@ -36,9 +36,9 @@ def index():
                 user_info['phone'] = prompt
                 return "Great! Lastly, could you please provide your email?"
 
-            elif 'email' in question:
-                user_info['email'] = prompt
-                return "Thank you! We will contact you shortly."
+            # elif 'email' in question:
+            #     user_info['email'] = prompt
+            #     return "Thank you! We will contact you shortly."
 
             else:
                 response = model.generate_content(question)
