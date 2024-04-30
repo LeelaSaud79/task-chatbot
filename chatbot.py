@@ -28,9 +28,9 @@ def index():
             if 'call' in question:
                 return "Sure! Before we proceed, could you please provide your name, phone number, and email?"
 
-            # elif 'name' in question:
-            #     user_info['name'] = prompt
-            #     return "Thank you! Could you please provide your phone number now?"
+            elif 'name' in question:
+                user_info['name'] = prompt
+                return "Thank you! Could you please provide your phone number now?"
 
             elif 'phone number' in question:
                 user_info['phone'] = prompt
