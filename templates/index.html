@@ -144,13 +144,13 @@
           var i = 0;
           var speed = 5;
   
-          // function typeWriter() {
-          //   if (i < data.length) {
-          //     $("p#typing-demo:last").text($("p#typing-demo:last").text() + data.charAt(i));
-          //     i++;
-          //     setTimeout(typeWriter, speed);
-          //   }
-          // }
+          function typeWriter() {
+            if (i < data.length) {
+              $("p#typing-demo:last").text($("p#typing-demo:last").text() + data.charAt(i));
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
   
           typeWriter();
         }
